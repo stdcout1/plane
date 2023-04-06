@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://34ehvifo4c80"]
+
+[ext_resource type="Script" path="res://Camera3D.gd" id="1_2o552"]
+
+[node name="Camera3D" type="Camera3D"]
+script = ExtResource("1_2o552")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 16.0
+omni_range = 34.992

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1glwo888pj6q"]
+
+[ext_resource type="PackedScene" uid="uid://dvqy47mavv8yw" path="res://world.tscn" id="2_0wdv6"]
+[ext_resource type="PackedScene" uid="uid://dsk4an67e2lxh" path="res://player.tscn" id="2_a64dt"]
+
+[sub_resource type="Environment" id="Environment_oisgr"]
+background_mode = 1
+ambient_light_energy = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xtpmv"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.85264, -0.315175, 0.416736, 0, 0.797584, 0.603208, -0.522498, -0.514319, 0.680052, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_oisgr")
+
+[node name="World" parent="." instance=ExtResource("2_0wdv6")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.84219)
+mesh = SubResource("CylinderMesh_xtpmv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_energy = 16.0
+omni_range = 4096.0
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_a64dt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.04252, 0)

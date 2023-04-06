@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsk4an67e2lxh"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_duum6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4bwyb"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o07fr"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_duum6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_4bwyb")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_o07fr")
+
+[node name="Camera3D" type="Camera3D" parent="."]

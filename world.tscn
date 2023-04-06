@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvqy47mavv8yw"]
+
+[ext_resource type="Script" path="res://World.gd" id="1_svxgf"]
+[ext_resource type="MeshLibrary" uid="uid://dd7kpajy2vd2l" path="res://meshlibcube.tres" id="2_bf8cw"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_svxgf")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_bf8cw")
+cell_size = Vector3(1, 1, 1)
